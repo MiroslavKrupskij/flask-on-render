@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: flask-on-render
+    env: python
+    plan: free
+    region: Odesa
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    healthCheckPath: /
+    autoDeploy: true
